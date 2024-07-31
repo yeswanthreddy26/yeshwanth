@@ -1,0 +1,104 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+  
+        .login-container {
+            margin-top: 80px;
+        }
+
+        .login-form {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-heading h2 {
+            color: #007bff;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: none;
+        }
+
+        .login-btn {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+        }
+
+        .login-btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .message {
+            font-size: 14px;
+            color: red;
+            margin-top: 50px;
+            margin-left: 40%; /* Add margin top for spacing */
+        }
+        
+        body
+        {
+        background-color:green;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="message" th:if="${param.error}">
+           Invalid Username or Password
+        </div>
+        <div class="message" th:if="${param.logout}">
+           Logout Successfuly
+        </div>
+
+    <div class="container">
+        <div class="row justify-content-center login-container">
+            <div class="col-md-4">
+                <div class="login-form">
+                    <div class="login-heading">
+                        <h2>Login</h2>
+                    </div>
+                    <form id="loginForm"  th:action="@{/login}" method="POST">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="email" id="username" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block login-btn">Login</button>
+                    </form><br>
+                    <div class="register-link">
+                        Don't have an account? <a href="/registration">Register here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
