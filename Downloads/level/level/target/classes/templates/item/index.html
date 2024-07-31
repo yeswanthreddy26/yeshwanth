@@ -1,0 +1,184 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>My groceries</title>
+    
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+    
+    body
+    {
+    
+    background:url(11.jpg);
+    
+    
+    
+    }
+    *
+        {
+            padding: 0px;
+            margin: 0px;
+            color: black;
+        }
+
+        #navbar
+        {
+            height: 90px;
+            background-color: whitesmoke;
+            
+        }
+
+        a
+        {
+            margin-right: 40px;
+            text-decoration: none;
+        }
+
+        marquee
+        {
+            background-color: green;
+            color: black;
+            height:40px;
+            padding:0px;
+
+
+        }
+
+        .ff
+        {
+            margin: 5px;
+        }
+        .gg
+        {
+            margin-right: 50px;
+        }
+
+        #rr
+        {
+            margin-left: 50px;
+            margin-top: 5px;
+        }
+    
+    
+
+    </style>
+  </head>
+  <div id="navbar">
+            <img class="gg" id="rr" src="dmart.png">
+            <a class="gg" href="https://www.dmartindia.com/about-us">ABOUT US</a>
+            <a href="https://www.dmartindia.com/categories">CATEGORIES</a>
+            <a href="https://www.dmartindia.com/social-outreach">SOCIAL OUTREACH</a>
+            <a href="https://www.dmartindia.com/partner-with-us">PATNER WITH US</a>
+            <a href="https://career10.successfactors.com/career?company=avenuesupe">CAREERS</a>
+            <a href="https://www.dmartindia.com/feedback">FEEDBACK</a>  
+            <a class="ff" href="https://www.facebook.com/AvenueSupermarts/"><img src="facebook.png" width="30" height="30"</a>
+            <a class="ff" href="https://www.linkedin.com/company/avenue-supermarts-ltd-dmart/"><img src="linkdin.png" width="30" height="30"</a>
+        </div>
+        <marquee>Dear Customers - Our offers / promotions and customer care contact details are published on our websites (www.dmartindia.com and www.dmart.in), DMart Ready App and at our Stores. Please do not call any unknown numbers or click on any unknown links or similar looking links. Please check the website name carefully. These could be potential phishing websites.</marquee>
+
+  <body>
+   
+
+  
+  <div class = "container">
+
+  <h1 class = "text-center my-4"><b><font color = "red">Groceries</font></b></h1>
+
+  <a class="btn btn-primary" href="/item/create"> Create Grocery</a>
+
+  <table class="table">
+
+  <thead>
+
+  <tr>
+
+  <th>Id</th>
+  <th>ImageFileName1</th>
+   <th>ImageFileName2</th>
+    <th>ImageFileName3</th>
+     <th>ImageFileName4</th>
+      <th>ImageFileName5</th>
+  
+
+  <th>Action</th>
+
+  </tr>
+
+  </thead>
+
+  
+
+  <tbody>
+
+  <tr th:each="item : ${item}">
+
+  <td th:text="${item.id}"></td>
+
+
+  <td>
+
+  <img th:src="@{'/iimage/'+${item.imageFileName1}}" alt="..." width="100">
+
+  </td>
+
+  <td>
+
+  <img th:src="@{'/iimage/'+${item.imageFileName2}}" alt="..." width="100">
+
+  </td>
+  <td>
+
+  <img th:src="@{'/iimage/'+${item.imageFileName3}}" alt="..." width="100">
+
+  </td>
+  <td>
+
+  <img th:src="@{'/iimage/'+${item.imageFileName4}}" alt="..." width="100">
+
+  </td>
+  <td>
+
+  <img th:src="@{'/iimage/'+${item.imageFileName5}}" alt="..." width="100">
+
+  </td>
+
+  
+   <td style="white-space:nowrap">
+
+   <a class="btn btn-primary btn-sm" 
+
+   th:href="@{/item/edit(id=${item.id})}">Edit</a>
+
+   <a class="btn btn-danger btn-sm" 
+
+   th:href="@{/item/delete(id=${item.id})}"
+
+   onclick="return confirm('Are u sure?')">Delete</a>
+
+   </td>
+
+   </tr>
+
+   </tbody>
+
+   </table>
+
+   </div>
+
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>

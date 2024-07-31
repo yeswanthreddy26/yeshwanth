@@ -1,0 +1,227 @@
+<!doctype html>
+
+<html lang="en">
+
+ <head>
+
+ <meta charset="utf-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <title>Create grocery</title>
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<style>
+ body
+    {
+    
+    background-color:black;
+    
+    
+    
+    
+    }
+    
+     .geeks {
+            font-size: 40px;
+            text-align: center;
+            font-weight: bold;
+            color: pink;
+            padding-bottom: 0px;
+            font-family: Times New Roman;
+        }
+ 
+        .geeks1 {
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+            font-family: Times New Roman;
+            color: gold;
+        }
+        
+         h4 {
+            width: 400px;
+            background-color: orange;
+            animation-name: text;
+            animation-duration: 3s;
+             
+        }
+ 
+        #one {
+            animation-fill-mode: none;
+            
+        }
+ 
+        #two {
+            animation-fill-mode: forwards;
+             
+        }
+ 
+        #three {
+            animation-fill-mode: backwards;
+            animation-delay: 2s;
+             
+        }
+ 
+        #four {
+            animation-fill-mode: both;
+            animation-delay: 2s;
+             
+        }
+ 
+        @keyframes text {
+            from {
+                margin-left: 0%;
+                background-color: #aaaaaa;
+            }
+ 
+            to {
+                margin-left: 60%;
+                background-color: #008000;
+            }
+
+</style>
+
+ </head>
+ <div class="geeks">TYPES OF PRODUCTS</div>
+    <div class="geeks1">THE GROCERIES HOUSE</div>
+    <h4 id="one">FOOD ITEMS</h4>
+    <h4 id="two">SPORTS</h4>
+    <h4 id="three">LUXURY ITEMS</h4>
+    <h4 id="four">DRESS</h4>
+ 
+
+ <body>
+ 
+ 
+
+ <div class = "container">
+
+ <div class="col-md-8 mx-auto rounded border p-4 m-4">
+
+ <h2 class = "text-center mb-5"><b><font color = "yellow">New grocery</font></b></h2>
+
+ <form method="post" enctype="multipart/form-data" th:object="${itemDto}">
+
+
+ 
+ 
+ <div class="row mb-3">
+
+ <label class="col-sm-4 col-form-Label"><font color = "green">Item1</font></label>
+
+ <div class="col-sm-8">
+
+ <input class="form-control" type="file" th:field="${itemDto.imageFile1}">
+
+ <p th:if="${#fields.hasErrors('imageFile1')}" th:errorclass="text-danger"
+
+ th:errors="${itemDto.imageFile1}"></p>
+
+ </div>
+
+ </div>
+ 
+ <div class="row mb-3">
+
+ <label class="col-sm-4 col-form-Label"><font color = "green">Item2</font></label>
+
+ <div class="col-sm-8">
+
+ <input class="form-control" type="file" th:field="${itemDto.imageFile2}">
+
+ <p th:if="${#fields.hasErrors('imageFile2')}" th:errorclass="text-danger"
+
+ th:errors="${itemDto.imageFile2}"></p>
+
+ </div>
+
+ </div>
+ 
+ <div class="row mb-3">
+
+ <label class="col-sm-4 col-form-Label"><font color = "green">Item3</font></label>
+
+ <div class="col-sm-8">
+
+ <input class="form-control" type="file" th:field="${itemDto.imageFile3}">
+
+ <p th:if="${#fields.hasErrors('imageFile3')}" th:errorclass="text-danger"
+
+ th:errors="${itemDto.imageFile3}"></p>
+
+ </div>
+
+ </div>
+ 
+ <div class="row mb-3">
+
+ <label class="col-sm-4 col-form-Label"><font color = "green">Item4</font></label>
+
+ <div class="col-sm-8">
+
+ <input class="form-control" type="file" th:field="${itemDto.imageFile4}">
+
+ <p th:if="${#fields.hasErrors('imageFile4')}" th:errorclass="text-danger"
+
+ th:errors="${itemDto.imageFile4}"></p>
+
+ </div>
+
+ </div>
+ 
+ <div class="row mb-3">
+
+ <label class="col-sm-4 col-form-Label"><font color = "green">Item5</font></label>
+
+ <div class="col-sm-8">
+
+ <input class="form-control" type="file" th:field="${itemDto.imageFile5}">
+
+ <p th:if="${#fields.hasErrors('imageFile5')}" th:errorclass="text-danger"
+
+ th:errors="${itemDto.imageFile5}"></p>
+
+ </div>
+
+ </div>
+ 
+
+ 
+
+ <div class="row">
+
+ <div class="offset-sm-4 col-sm-4 d-grid">
+
+ <button type="submit" class="btn btn-primary">submit</button>
+
+ </div>
+
+ <div class="col-sm-4 d-grid">
+
+ <a class="btn btn-danger" href="/item" role="button">cancel</a>
+
+ 
+
+ </div>
+
+ </div>
+
+ 
+
+ </form>
+
+ </div>
+
+ 
+
+ </div>
+
+ 
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ 
+ </body>
+
+</html>
+
